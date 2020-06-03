@@ -10,7 +10,7 @@ class ProjectTest extends TestCase
 {
     use WithFaker, RefreshDatabase;
 
-    public function test_user_can_create_a_project()
+    public function test_user_can_create_project()
     {
         $this->withoutExceptionHandling();
 
@@ -24,6 +24,15 @@ class ProjectTest extends TestCase
         $this->assertDatabaseHas('projects', $attributes);
 
         $this->get('/projects')->assertSee($attributes['title']);
+    }
+
+    public function test_user_can_view_project()
+    {
+        $project = factory('App\Project')->create();
+
+        $this->get($project->path())
+            ->assertSee($project->title)
+            ->assertSee($project->description);
     }
 
     public function test_project_require_title()
