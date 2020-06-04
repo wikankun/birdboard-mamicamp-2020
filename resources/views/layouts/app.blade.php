@@ -68,7 +68,7 @@
             </div>
         </nav>
 
-        <main class="container mx-auto py-4 section">
+        <main class="container mx-auto py-4 px-3 section">
             @yield('content')
         </main>
     </div>

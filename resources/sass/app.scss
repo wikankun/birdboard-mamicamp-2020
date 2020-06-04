@@ -31,6 +31,13 @@
 
     box-shadow: 0 2px 7px 0 #b0eaff;
   }
+
+  .card {
+    @apply bg-white;
+    @apply p-5;
+    @apply rounded-lg;
+    @apply shadow;
+  }
  
  /**
   * Here you would add any of your custom component classes; stuff that you'd
