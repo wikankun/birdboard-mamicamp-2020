@@ -19,6 +19,18 @@
   * @import "tailwindcss/components";
   */
  @tailwind components;
+
+ .button {
+    @apply bg-blue;
+    @apply no-underline;
+    @apply text-white;
+    @apply text-sm;
+    @apply rounded-lg;
+    @apply py-2;
+    @apply px-5;
+
+    box-shadow: 0 2px 7px 0 #b0eaff;
+  }
  
  /**
   * Here you would add any of your custom component classes; stuff that you'd
