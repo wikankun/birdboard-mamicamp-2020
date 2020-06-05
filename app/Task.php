@@ -39,4 +39,9 @@ class Task extends Model
     {
        return "/projects/{$this->project->id}/tasks/{$this->id}";
     }
+
+    public function incomplete()
+    {
+        $this->update(['completed' => false]);
+    }
 }
