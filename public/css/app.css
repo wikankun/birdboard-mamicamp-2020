@@ -560,6 +560,13 @@ table {
   box-shadow: 0 2px 7px 0 #b0eaff;
 }
 
+.card {
+  background-color: #fff;
+  padding: 1.25rem;
+  border-radius: .5rem;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, .08);
+}
+
 /**
  * Here you would add any of your custom component classes; stuff that you'd
  * want loaded *before* the utilities so that the utilities could still
@@ -575,13 +582,6 @@ table {
  * @import "components/buttons";
  * @import "components/forms";
  */
- 
- .card {
-  background-color: #fff;
-  padding: 1.25rem;
-  border-radius: .5rem;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, .08);
-}
 
 /**
  * This injects all of Tailwind's utility classes, generated based on your
