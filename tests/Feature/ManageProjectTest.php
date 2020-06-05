@@ -34,8 +34,8 @@ class ProjectTest extends TestCase
         $this->get('/projects/create')->assertStatus(200);
 
         $attributes = [
-            'title' => $this->faker->sentence,
-            'description' => $this->faker->paragraph(1),
+            'title' => $this->faker->sentence(4),
+            'description' => $this->faker->sentence(4),
             'notes' => 'General notes here.'
         ];
 
