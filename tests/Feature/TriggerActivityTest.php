@@ -29,6 +29,7 @@ class TriggerActivityTest extends TestCase
         $this->assertCount(2, $project->activity);
         $this->assertEquals('updated', $project->activity->last()->description);
     }
+
     /** @test */
     function creating_a_new_task()
     {
@@ -54,6 +55,7 @@ class TriggerActivityTest extends TestCase
         $this->assertCount(3, $project->activity);
         $this->assertEquals('completed_task', $project->activity->last()->description);
     }
+
     /** @test */
     function incompleting_a_task()
     {
