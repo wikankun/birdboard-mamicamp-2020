@@ -1,6 +1,6 @@
-require('./bootstrap');
+import './bootstrap';
 
-window.Vue = require('vue');
+import Vue from 'vue';
 
 import VModal from 'vue-js-modal';
 
@@ -10,6 +10,6 @@ Vue.component('theme-switcher', require('./components/ThemeSwitcher.vue').defaul
 Vue.component('new-project-modal', require('./components/NewProjectModal.vue').default);
 Vue.component('dropdown', require('./components/Dropdown.vue').default);
 
-const app = new Vue({
+new Vue({
     el: '#app'
 });
