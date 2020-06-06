@@ -6,6 +6,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\Project;
+use App\Task;
 use Facades\Tests\Setup\ProjectFactory;
 
 class ProjectTest extends TestCase
@@ -38,6 +39,22 @@ class ProjectTest extends TestCase
             ->assertSee($attributes['title'])
             ->assertSee($attributes['description'])
             ->assertSee($attributes['notes']);
+    }
+
+    function test_tasks_can_be_included_as_part_new_project_creation()
+    {
+        $this->signIn();
+
+        $attributes = factory(Project::class)->raw();
+
+        $attributes['tasks'] = [
+            ['body' => 'Task 1'],
+            ['body' => 'Task 2']
+        ];
+
+        $this->post('/projects', $attributes);
+
+        $this->assertCount(2, Project::first()->tasks);
     }
 
     function test_user_can_see_all_projects_they_have_been_invited_to_on_their_dashboard()
