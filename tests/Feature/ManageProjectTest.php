@@ -51,6 +51,13 @@ class ProjectTest extends TestCase
             ->assertSee($attributes['notes']);
     }
 
+    function test_user_can_see_all_projects_they_have_been_invited_to_on_their_dashboard()
+    {
+        $project = tap(ProjectFactory::create())->invite($this->signIn());
+
+        $this->get('/projects')->assertSee($project->title);
+    }
+
     function test_unauthorized_users_cannot_delete_projects()
     {
         $project = ProjectFactory::create();
