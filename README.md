@@ -30,4 +30,4 @@ php artisan serve
 ```
 
 ## Tests are passing
-![tests are passing](/public/images/test.gif)
+![tests are passing](/public/images/tests.gif)
