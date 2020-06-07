@@ -28,3 +28,6 @@ Run local dev server
 ```
 php artisan serve
 ```
+
+## Tests are passing
+![tests are passing](public/images/test.gif)
